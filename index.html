@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgb(113, 113, 111);
+      }
+
+      body {
+        background: rgb(255, 255, 255);
+      }
+
+      header {
+        background: #000;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+
+      .logo {
+        padding: 20px 22px;
+        
+      }
+
+      .logo h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .link {
+        display: flex;
+
+        padding: 22px 0px;
+      }
+
+      .third {
+        display: flex;
+        padding-right: 10px;
+      }
+
+      .bt {
+        color: #f0eeee;
+        background: #24dc08;
+        padding: 5px 9px;
+        border: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      .bt:hover {
+        background: #1cae06;
+      }
+
+      .hamburger {
+        display: none;
+      }
+      .link li {
+        list-style: none;
+        padding: 0px 20px;
+      }
+      .third li {
+        list-style: none;
+        padding: 0px 14px;
+        padding-top: 13px;
+      }
+      .third i{
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+      }
+
+      .link a:hover {
+        color: #24dc08;
+      }
+
+      /* Responsive CSS */
+
+      .link.animate {
+        transition: transform 0.3s ease;
+      }
+      @media (max-width: 768px) {
+        header {
+          background: #000;
+        }
+        .link li {
+          padding: 0px 10px;
+        }
+     
+      }
+
+      @media (max-width: 668px) {
+        .link {
+          position: absolute;
+          top: 86px;
+          left: 1px;
+          width: 50%;
+          height: 100vh;
+          padding: 20px 25px;
+          background: #333131;
+          border-radius: 7px;
+          display: flex;
+          flex-direction: column;
+          transform: translateX(-100%);
+          z-index: 1;
+          transition: none;
+        }
+        .third {
+          padding: 22px 0px;
+        }
+        .hamburger {
+          display: block;
+          background: #000;
+          width: 40px;
+          border: none;
+          margin-top: 3px;
+        }
+
+        .link.active {
+          transform: translateX(0);
+        }
+
+        .link li {
+          padding: 10px 10px;
+          transition: background 0.4s ease;
+        }
+        .link li:hover {
+          background: #5e5d5d;
+          border-radius: 8px;
+        }
+
+        .logo h1 {
+          font-size: 29px;
+        }
+      }
+
+      @media (max-width: 250px) {
+        .link {
+          display: none;
+        }
+        .third {
+          padding: 10px 5px;
+        }
+        .third li {
+          padding: 0px 4px;
+        }
+        button {
+          padding: 2px 4px;
+        }
+        .logo h1 {
+          font-size: 20px;
+          padding-right: 10px;
+        }
+        .hamburger {
+          width: 18px;
+        }
+        .hamburger img {
+          width: 30px;
+        }
+      }
+      /* Responsive CSS */
+
+    .hero-slide{
+      display: flex;
+    
+      overflow-x: hidden;
+    }
+
+    .head-slide::-webkit-scrollbar{
+      display: none;
+    }
+  
+
+      .slide1 {
+        /* background: rgb(179 184 178); */
+          max-height: 500px;
+        max-width: 100%;
+       display: flex;
+        flex: 0 0 100em;
+        
+      }
+
+      .slide1 img {
+        
+         animation: float 1.5s ease 0s;
+        width: 100%;
+        /* mask-image: linear-gradient(to left, rgb(0, 0, 0) 65%, transparent 100%); */
+      
+        /* background: rgb(220 210 208); */
+       
+      }
+
+      @keyframes float {
+        0%{
+          transform: translateY(-50px)
+        }
+        /* 50%{
+          transform: translateY(-8px);
+        } */
+        100%{
+          transform: scale(1);
+        }
+      }
+
+      .heading{
+        width: 100%;
+        padding: 95px 0px 50px 10px;
+      }
+
+      .heading h1 {
+        color: #000;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+ 
+      p{
+        color: #000000;
+         font-family: Arial, Helvetica, sans-serif;
+         padding-bottom: 15px;
+         font-weight: 400;
+      }
+
+      .feature-section h2{
+        color: #000;
+        padding: 30px 0px 20px 180px;
+        
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        font-size: 2rem;
+      }
+      
+      .featured{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+        background: rgb(255, 255, 255);
+        justify-content: center;
+        gap: 40px;
+        padding: 0px 5px;
+      
+      }
+
+      .product{
+        /* border: 1px solid rgb(255, 255, 255); */
+        border-radius: 10px;
+        box-shadow:  2px 2px 6px 1px rgba(0, 0, 0, 0.2);;
+        background: white;
+        transition: transform .3s ease 0s;
+        position: relative;
+      }
+
+      .badge{
+        position: absolute;
+        background: #0c9f1d;
+        border-radius: 9px;
+        top: 10px;
+        left: 5px;
+        padding: 0px 4px;
+        
+      }
+
+      .sale{
+        color: #ffffff;
+        font-size: 10px;
+        font-weight: bold;
+        
+      }
+
+      .product:hover,
+      .review:hover,
+       .site-feature:hover{
+        transform: scale(1.05);
+      }
+
+      .product .price{
+        color: black;
+      }
+
+    .product img{
+      border-radius: 10px;
+     
+    
+    }
+    .item-detail{
+      padding: 10px;
+    }
+
+    .add{
+      color: #ffffff;
+      background: #1a9507;
+      border: none;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background .3s ease;
+    }
+
+    .add::before{
+      content: '🛒';
+      font-size: larger;
+    }
+
+    .add:hover{
+      background: #066306;
+    
+    }
+
+    h3, h4{
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .reason{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      border-radius: 10px;
+      gap: 10px;
+    }
+
+    .site-feature{
+      background: #bdbcbc;
+      padding: 10px 25px;
+      border-radius: 10px;
+      max-width: 267px;
+       transition: transform .3s ease 0s;
+    }
+    .site-feature h4{
+      color: #000;
+      padding-top: 10px;
+    }
+    .fi{
+      color: #000;
+    }
+    
+    .review-section{
+      display: flex;
+      justify-content: center;
+     gap: 20px;
+    flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .review{
+      background: #e6e2e2;
+      /* overflow: auto; */
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 360px;
+      box-shadow:  2px 2px 6px 1px rgba(0, 0, 0, 0.2);
+      transition: transform .3s ease 0s;
+    }
+
+    .review h4{
+      color: #000;
+    }
+
+    .opi{
+      color: #000;
+      overflow: auto;
+    }
+
+    .opi::before{
+      content: '“';
+      font-size: 2rem;
+    }
+
+    .footer-bar{
+      background: #302f2f;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+    .footer-nav h1,  p{
+      color: #f4f3f3;
+      padding: 10px 0px;
+      font-family: Arial, Helvetica, sans-serif;
+     
+    }
+
+
+   
+
+    .footer-nav i, h4{
+      color: white;
+      
+      padding: 0px 5px;
+    }
+
+  .footer-nav li{
+    list-style: none;
+    padding: 10px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .footer-nav a{
+    color: white;
+    font-weight: lighter;
+  }
+
+  .footer-nav{
+    padding: 20px 10px;
+  }
+
+  .slogan{
+    max-width: 200px;
+  }
+
+  .footer-nav a:hover{
+    text-decoration: underline;
+    color: #bdbcbc;
+  }
+
+
+  .site-feature span{
+    display: block;
+    background: #f6f1f1;
+    width: 50px;
+    height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+ 
+  }
+  .site-feature i{
+    color: #549064;
+  }
+
+  
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="hamburger">
+          <img src="images/burger.png" alt="" width="40" />
+        </button>
+        <div class="logo">
+          <h1>Furnio</h1>
+        </div>
+        <ul class="link">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="third">
+          <li>
+            <a href="#"><i class="fas fa-search search-icon"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa fa-shopping-cart"></i>
+              <span class="cart-badge"></span>
+            </a>
+          </li>
+          <li><button class="bt">Login</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-slide">
+        <article class="slide1">
+            <!-- <div class="heading">
+              <p>Best Quality Furniture</p>
+            <h1>Modern Furniture For Your Home</h1>
+        
+          </div> -->
+          <img src="images/sofa.jpg" />
+        
+        </article>
+       
+      </section>
+      <section class="feature-section">
+      <h2>Featured Products</h2>
+        <div class="featured">
+        <article class="product">
+          <div class="badge">
+            <p class="sale">20% OFF</p>
+            
+          </div>
+            <span class="item"><a class="product-link" href="#">
+            
+              <img src="images/chair.jpg" alt="" width="250px">
+            </a></span>
+            <div class="item-detail">
+
+              <h3>Modern Armchair</h3>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p class="price">₹7999</p>
+              <button class="add">Add to Card</button>
+            </div>
+        </article>
+        <article class="product">
+            <div class="badge">
+            <p class="sale">15% OFF</p>
+            
+          </div>
+            <span class="item"><a class="product-link" href="#">
+            
+              <img src="images/table.webp" alt="" width="250px">
+            </a></span>
+            <div class="item-detail">
+
+              <h3>Wooden Dining Set</h3>
+              <p>⭐⭐⭐⭐⭐</p>
+              <p class="price">₹24999</p>
+              <button class="add">Add to Card</button>
+            </div>
+        </article>
+        <article class="product">
+            <div class="badge">
+            <p class="sale">10% OFF</p>
+          </div>
+          <span class="item"><a class="product-link" href="#">
+            
+            <img src="images/sofa2.jpg" alt="" width="250px">
+          </a></span>
+             <div class="item-detail">
+
+               <h3>Comfortable Sofa</h3>
+               <p>⭐⭐⭐⭐⭐</p>
+               <p class="price">₹17999</p>
+               <button class="add">Add to Card</button>
+              </div>
+        </article>
+        <article class="product">
+            <div class="badge">
+            <p class="sale">25% OFF</p>
+          </div>
+          <span class="item"><a class="product-link" href="#">
+            
+            <img src="images/coffee-table.jpg" alt="" width="250px">
+          </a></span>
+          <div class="item-detail">
+
+            <h3>Wooden Coffee Table</h3>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p class="price">₹4299</p>
+            <button class="add">Add to Card</button>
+          </div>
+        </article>
+        </div>
+        <div class="reason">
+          <article class="site-feature">
+            <span><i class="fa fa-truck"></i></span>
+            <h4>Free Delivery</h4>
+            <p class="fi">Free delivery on orders above 999</p>
+          </article>
+          <article class="site-feature">
+            <span><i class="fa-solid fa-shield"></i></span>
+            <h4>Secure Payment</h4>
+            <p class="fi">100% secure payment guarantee</p>
+          </article>
+          <article class="site-feature">
+            <span>
+              <i class="fa-solid fa-award"></i>
+
+            </span>
+            <h4>Best Quality</h4>
+            <p class="fi">Best quality product guarantee</p>
+          </article>
+          <article class="site-feature">
+            <span>
+
+              <i class="fa fa-headset"></i> 
+            </span>
+            <h4>24/7 Support</h4>
+            <p class="fi">Dedicated chat support available</p>
+          </article>
+        </div>
+        <h2>What Our Customers Say</h2>
+        <div class="review-section">
+          <article class="review">
+            <h4>Rahul Gupta</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p class="opi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti unde libero saepe dignissimos iusto itaque?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit </p>
+          </article>
+          <article class="review">
+            <h4>Amit Verma</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p class="opi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti unde libero saepe dignissimos iusto itaque?</p>
+          </article>
+          <article class="review">
+            <h4>Prince Mehta</h4>
+            <p>⭐⭐⭐⭐⭐</p>
+            <p class="opi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti unde libero saepe dignissimos iusto itaque?</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-bar">
+      <article class="footer-nav">
+        <h1>Furnio</h1>
+        <p class="slogan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, suscipit.</p>
+      </article>
+      <article class="footer-nav">
+        <h4>Quick Links</h4>
+       <ul class="quick">
+         <li><a href="#">About Us</a></li>
+         <li><a href="#">Products</a></li>
+         <li><a href="#">Blog</a></li>
+         <li><a href="#">Home</a></li>
+       
+       </ul>
+         </article>
+      <article class="footer-nav">
+        <h4>Customer Service</h4>
+           <ul class="service-link">
+         <li><a href="#">My Account</a></li>
+         <li><a href="#">Track Order</a></li>
+         <li><a href="#">Wishlist</a></li>
+         <li><a href="#">Returns</a></li>
+         <li><a href="#">FAQ</a></li>
+       
+       </ul>
+      </article>
+      <article class="footer-nav">
+        <h4>Categories</h4>
+       <ul class="service-link">
+         <li><a href="#">Sofas</a></li>
+         <li><a href="#">Chairs</a></li>
+         <li><a href="#">Beds</a></li>
+         <li><a href="#">Tables</a></li>
+         <li><a href="#">Storage</a></li>
+       
+       </ul>
+      </article>
+      <article class="footer-nav">
+        <h4>Contact Us</h4>
+        <ul class="service-link">
+          <li><a href="#"><i class="fa fa-map-marker"></i>123, Furniture Street, Mumbai, India</a></li>
+
+          <li><a href="#"><i class="fa fa-phone"></i>+919223546233</a></li>
+          <li><a href="#"><i class="fa fa-envelope"></i>support@furnio.com</a></li>
+        </ul>
+      </article>
+      </section>
+    </footer>
+  </body>
+  <script>
+    const burgerButton = document.querySelector(".hamburger");
+    const navs = document.querySelector(".link");
+ 
+    burgerButton.addEventListener("click", function () {
+      // console.log(navs);
+      navs.classList.toggle("active");
+      navs.classList.add("animate");
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 668) {
+        navs.classList.remove("active");
+        navs.classList.remove("animate");
+      }
+    });
+  </script>
+</html>
+
